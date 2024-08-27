@@ -1,8 +1,8 @@
 export const Constants = Object.freeze({
   AHHA: 'https://ahhacreative.com',
-  GIT_CLONE: '',
-  REPO: '',
-  GITHUB_DISCUSSION: '',
+  GIT_CLONE: 'https://github.com/ahaywood/shell-yes',
+  REPO: 'https://github.com/ahaywood/shell-yes',
+  GITHUB_DISCUSSION: 'https://github.com/ahaywood/shell-yes/discussions',
   GITHUB: 'https://github.com/ahaywood',
   MEDIUM: 'https://medium.com/@selfteachme',
   TWITTER: 'https://twitter.com/selfteachme',
