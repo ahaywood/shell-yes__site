@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "build:icons": "tsx ./other/build-icons.mts"
+    "icons": "tsx ./other/build-icons.mts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
