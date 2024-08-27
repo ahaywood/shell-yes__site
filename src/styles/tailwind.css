@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap');
+
+@font-face {
+    font-family: 'Old Pines';
+    src: url('/fonts/old_pines_aged-webfont.woff2') format('woff2'),
+          url('/fonts/old_pines_aged-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    font-variant-emoji: emoji;
+    @apply p-0 m-0 font-body;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-display;
+  }
+
+  label {
+    @apply uppercase text-burntMaroon text-xl mb-2 leading-normal;
+  }
+
+  dl {
+    @apply grid grid-cols-[125px_1fr] gap-x-4 gap-y-5 max-w-[1050px] mx-auto mb-10;
+    dt { @apply justify-self-end}
+    dt a { @apply bg-provincialPink hover:bg-melon px-3 py-1 inline-block }
+    dd { @apply self-center }
+  }
+
+  svg {
+    @apply fill-current;
+  }
+}
+
+@layer components {
+  header {
+    background: url('/images/header__water-spot.png') center right no-repeat,
+      url('/images/bg__hero.png') center top no-repeat;
+  }
+
+    .caption {
+      @apply text-base italic text-dustyGray;
+    }
+
+  .vs-code {
+    @apply h-[757px] bg-[url('/images/vs-code.png')] bg-no-repeat;
+    background-position: 600px top;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .vs-code {
+      background-size: auto 757px;
+      @apply bg-[url('/images/vs-code@2x.png')];
+    }
+  }
+
+  .surfing-the-code {
+    background: url('/images/octopus.png') left top no-repeat,
+      url('/images/gold-paint--top.png') right 485px no-repeat,
+      url('/images/bg__surfing-the-code.png') center 140px no-repeat;
+    @apply h-[1177px] pt-[200px];
+  }
+
+  .packed-example-screencast {
+    background: url('/images/gold-paint--btm.png') right bottom no-repeat,
+      url('/images/bg__screencast.png') right bottom no-repeat;
+    @apply min-h-[1100px];
+  }
+
+  .docs {
+    @apply max-w-[1110px] mx-auto relative grid grid-cols-[auto_265px] gap-x-[120px];
+    p + h2,
+    h3 + h2 { @apply pt-10}
+    p { @apply mb-3 }
+    pre { @apply mb-3 py-2 px-3 rounded-lg }
+  }
+
+  .table-of-contents {
+    @apply border-l-1 border-[#e4d8d4] pl-[60px];
+    ul {}
+    li.depth-2 { @apply font-display lowercase text-makara text-3xl leading-[42px] mb-2; }
+    li.depth-3 { @apply font-body lowercase text-dustyGray text-lg pl-2 leading-relaxed; }
+    li.depth-3:has(+ li.depth-2) { @apply mb-8 }
+    li a:hover {@apply text-burntMaroon; }
+  }
+
+
+  .terminal-examples {
+    background: url('/images/seaturtle.png') right bottom no-repeat,
+      url('/images/bg__testing.png') right bottom no-repeat
+  }
+
+  .terminal-example {
+    @apply grid grid-cols-[368px_1fr] gap-x-14 mb-[135px] max-w-[980px] ml-[100px] relative;
+    h2, h3 { @apply text-[68px] m-0 p-0 leading-none }
+    h2 { @apply text-dolphin -indent-[40px] }
+    h3 { @apply text-midnightExpress -top-4 relative lowercase }
+    p:has(+ ol) { @apply mb-6; }
+    ol { @apply list-decimal pl-10 }
+  }
+
+  .terminal {
+    pre {
+      @apply p-0 m-0 font-code font-medium;
+    }
+  }
+
+
+  .faq__answer a {
+    @apply underline hover:text-dolphin;
+  }
+
+  footer {
+    background: url('/images/bg__footer--top.png') center top no-repeat;
+  }
+}
+
+@layer utilities {
+  .center {
+    @apply flex items-center justify-center;
+  }
+}

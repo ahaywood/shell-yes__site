@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import { Faq } from "./Faq.tsx";
+
+const allFaqs = await getCollection("faqs");
+const totalFaqs = allFaqs.length;
+---
+
+{
+  allFaqs.map(async (faq, index) => {
+    const { Content } = await faq.render();
+    return (
+      <>
+        <Faq
+          client:only="react"
+          question={faq.data.question}
+          defaultOpen={index === 0}
+        >
+          <Content />
+        </Faq>
+        {/* if we're not on the last faq, display an hr */}
+        {++index < totalFaqs && (
+          <hr class="ml-12 border-b-1 border-[#e4d8d4] w-full my-8" />
+        )}
+      </>
+    );
+  })
+}

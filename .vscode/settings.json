@@ -1,0 +1,12 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#e48283",
+    "titleBar.activeBackground": "#f9c0ac",
+    "titleBar.activeForeground": "#000000"
+  },
+  "cSpell.words": [
+    "AHHA",
+    "astrojs",
+    "screencast"
+  ]
+}

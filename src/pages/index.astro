@@ -1,0 +1,326 @@
+---
+import { Constants } from "../helpers/Constants";
+import Docs, { getHeadings } from "../content/docs/docs.mdx";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Terminal } from "../components/Terminal.tsx";
+import { CopyCode } from "../components/CopyCode.tsx";
+import Footer from "../components/Footer.astro";
+import Faqs from "../components/Faqs.astro";
+import H2 from "../components/mdx/H2.astro";
+import H3 from "../components/mdx/H3.astro";
+
+// Extract headings from Docs.mdx
+const headings = getHeadings();
+---
+
+<BaseLayout>
+  <header class="relative">
+    <a href={Constants.GITHUB}
+      ><img
+        src="/images/github-corner.svg"
+        alt="GitHub"
+        class="absolute right-0 top-0"
+      /></a
+    >
+
+    <div class="relative w-[560px] mx-auto mb-12">
+      <img
+        src="/images/header__shell-and-bubbles.png"
+        alt="Seashell and Bubbles"
+        class="absolute -right-[347px] top-5"
+      />
+      <h1
+        class="font-display text-[165px] text-burntMaroon leading-[127px] text-center pt-[54px] mb-12"
+      >
+        Shell<br />Yes
+      </h1>
+      <h2 class="text-makara text-5xl text-center font-display mb-8">
+        Seas the Command Line
+      </h2>
+      <CopyCode client:only="react" />
+      <p class="text-center">
+        This starter template is guaranteed to make waves. Whether you’re a
+        seasoned sailor or exploring uncharted waters, this package has all the
+        essentials for smooth sailing and writing your own CLI tools.
+      </p>
+    </div>
+
+    <div class="relative">
+      <!-- WHEN YOU DIVE IN -->
+      <div class="w-[390px] absolute top-[300px] left-[calc((100%-1300px)/2)]">
+        <h2
+          class="text-[48px] text-deluge leading-none m-0 p-0 mb-5 indent-[-50px]"
+        >
+          When you dive in
+        </h2>
+        <p class="mb-5">Run the following within the Terminal:</p>
+        <Terminal client:only="react">
+          <pre>cd shell-yes
+npm install</pre>
+        </Terminal>
+      </div>
+
+      <div class="vs-code"></div>
+    </div>
+  </header>
+
+  <!-- SURFING THE CODE -->
+  <section class="surfing-the-code">
+    <h2 class="mb-[32px] text-center text-burntMaroon text-7xl">
+      Surfing the Code
+    </h2>
+    <img
+      src="/images/screencast.png"
+      alt="Screencast Placeholder"
+      class="mx-auto relative"
+    />
+  </section>
+
+  <div class="packed-example-screencast">
+    <!-- PACKED TO THE GILL: DEFAULT PACKAGES -->
+    <h2 class="text-[68px] text-center text-deluge">
+      Packed to the Gills: <span class="text-dolphin">Default Packages</span>
+    </h2>
+    <dl>
+      <dt><a href="#">Yargs</a></dt>
+      <dd>
+        This entire project is built around Yargs. This is a Node.js library
+        makes it easy to build interactive command line tools.
+      </dd>
+
+      <dt><a href="#">Chalk</a></dt>
+      <dd>Chalk is perfect for styling text.</dd>
+
+      <dt><a href="#">BoxerJS</a></dt>
+      <dd>Create boxes within the Terminal. (I made this, too!)</dd>
+
+      <dt><a href="#">Inquirer</a></dt>
+      <dd>
+        Want to build an interactive interface? Inputs, Checkboxes, Select,
+        Searches, Password, etc.
+      </dd>
+
+      <dt><a href="#">fs-extra</a></dt>
+      <dd>Adds file system methods aren’t included in the native fs module.</dd>
+    </dl>
+
+    <!-- REDWOOD TERMINAL EXAMPLE -->
+    <div class="flex">
+      <img src="/images/free-screencast__coral.png" alt="Coral" class="pt-20" />
+      <div>
+        <img src="/images/terminal-1.png" alt="RedwoodJS Terminal" />
+        <div class="caption relative -top-10 left-12">Made with Shell Yes!</div>
+      </div>
+    </div>
+
+    <!-- FREE SCREENCAST: TIDE-Y UP YOUR SKILLS -->
+    <div class="max-w-[810px] mx-auto relative">
+      <h2 class="text-[100px] text-deluge -indent-10 leading-none m-0 p-0">
+        Free Screecast
+      </h2>
+      <h3
+        class="text-[68px] text-burntMaroon leading-none m-0 p-0 relative -top-4"
+      >
+        tide-y up your skills
+      </h3>
+      <p class="mb-6 w-[90%]">
+        Personally, I learn best by through “reel” world projects and studying
+        how other people solve simliar problems. I recorded a screencast sharing
+        my process. I’d love to share it with you. Just let me know where to
+        send it.
+      </p>
+      <form action="">
+        <label for="email">Your Email</label>
+        <div class="flex items-center gap-6">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="flex-1 border-3 rounded-xl border-melon focus:border-apricot px-6 text-xl text-body h-20 outline-none"
+          />
+          <button
+            class="bg-melon hover:bg-mandysPink text-[#2e2e2e] text-3xl h-20 rounded-xl px-[72px] font-display"
+            >submit</button
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- CABANA: TERMINAL EXAMPLE -->
+  <div
+    class="bg-[url('/images/bg__documentation.png')] bg-no-repeat bg-left-top"
+  >
+    <div class="flex items-center justify-center -mb-10">
+      <div>
+        <img src="/images/terminal-2.png" alt="Terminal for Cabana Compnents" />
+        <div class="caption relative -top-10 left-12 text-[#554e43]">
+          Made with Shell Yes!
+        </div>
+      </div>
+      <div class="relative -left-20 top-40">
+        <img src="/images/starfish.png" alt="Starfish" />
+      </div>
+    </div>
+
+    <!-- DOCK-UMENTATION -->
+    <img
+      src="/images/horizontal-divider.png"
+      alt="Horizontal Divider"
+      class="w-full h-auto mb-10 mt-20"
+    />
+
+    <div class="docs mb-[100px]">
+      <h1
+        class="col-span-2 text-burntMaroon text-[100px] -indent-[90px] -mb-10"
+      >
+        Dock-umentation
+      </h1>
+      <div>
+        <Docs
+          components={{
+            h2: H2,
+            h3: H3,
+          }}
+        />
+      </div>
+      <aside class="table-of-contents">
+        <ul class="sticky top-4">
+          {
+            headings.map((heading) => (
+              <li class={`depth-${heading.depth}`}>
+                <a href={`#${heading.slug}`}>{heading.text}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <div class="terminal-examples">
+    <!-- CATCH OF THE DAY -->
+    <div
+      class="flex items-center justify-center mb-[100px] gap-[60px] max-w-[1300px] mx-auto relative"
+    >
+      <img src="/images/gold-seashell.png" alt="Gold Seashell" />
+      <div>
+        <h2
+          class="text-[68px] text-dolphin -indent-[40px] m-0 p-0 leading-none"
+        >
+          Catch of the Day
+        </h2>
+        <h3 class="text-makara text-5xl leading-none p-0 m-0 mb-6">
+          these packages are <span class="text-dustyGray">not</span> included,<br
+          />
+          but they're still some of my faovrites
+        </h3>
+
+        <dl>
+          <dt><a href="#">figlet</a></dt>
+          <dd>
+            This entire project is built around Yargs. This is a Node.js library
+            makes it easy to build interactive command line tools.
+          </dd>
+
+          <dt><a href="#">semver</a></dt>
+          <dd>
+            Do you need to compare versions? Semver is perfect for handling all
+            the various us cases.
+          </dd>
+
+          <dt><a href="#">ora</a></dt>
+          <dd>Need a spinner? Reach for Ora.</dd>
+
+          <dt><a href="#">ink</a></dt>
+          <dd>
+            We’re using Chalk to handle all of our styling, but Ink is worth
+            checking out. Especially, if you want to do more.
+          </dd>
+
+          <dt><a href="#">prompts</a></dt>
+          <dd>
+            Out of the box, we’ve provided Inquirer, but Prompts is a great
+            alternative.
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- SHORE FIRE TESTING - LOCAL DEVELOPMENT -->
+    <div class="terminal-example">
+      <div class="col-start-2">
+        <h2>Shore Fire Testing</h2>
+        <h3>Local Development</h3>
+      </div>
+      <div>
+        <Terminal client:only="react"> node NAME-OF-YOUR-APP COMMAND </Terminal>
+      </div>
+      <div>
+        <p>
+          Chances are, as you work on your code locally, you’ll want to test it
+          out within the Terminal.
+        </p>
+        <p>
+          NAME-OF-YOUR-APP is the name of the main JavaScript file. COMMAND is
+          the CLI command you want to run.
+        </p>
+      </div>
+    </div>
+
+    <!-- SHIP IT: DEPLYING TO NPM -->
+    <div class="terminal-example">
+      <div class="col-start-2">
+        <h2>Ship It</h2>
+        <h3>Deploying to NPM</h3>
+      </div>
+      <div>
+        <Terminal client:only="react"> node NAME-OF-YOUR-APP COMMAND </Terminal>
+      </div>
+      <div>
+        <p>
+          When you get ready to deploy your application, you’ll probably want to
+          consider putting it on npm. This is considered the standard.
+        </p>
+        <ol>
+          <li>Create an account on npm</li>
+          <li>Login to npm with your credentials.</li>
+          <li>Publish the package with npm publish.</li>
+        </ol>
+      </div>
+    </div>
+
+    <img
+      src="/images/horizontal-divider.png"
+      alt="Horizontal Divider"
+      class="w-full h-auto mb-10 mt-20"
+    />
+  </div>
+
+  <!-- FREQUENTLY ASKED QUESTIONS -->
+  <section class="w-[780px] mx-auto mb-[100px] relative pt-[130px]">
+    <img
+      src="/images/seaweed--left.png"
+      alt="seaweed"
+      class="absolute -left-[360px] -top-[75px]"
+    />
+    <img
+      src="/images/seaweed--right.png"
+      alt="seaweed"
+      class="absolute -right-[360px] top-0"
+    />
+    <h2 class="text-dolphin text-[68px] leading-none">
+      Frequently Asked Questions
+    </h2>
+    <h3
+      class="text-midnightExpress text-[68px] leading-none mb-10 indent-12 relative -top-2"
+    >
+      and their reef-ined answers
+    </h3>
+
+    <Faqs />
+  </section>
+
+  <!-- FOOTER -->
+  <Footer />
+</BaseLayout>

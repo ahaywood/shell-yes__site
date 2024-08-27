@@ -1,0 +1,76 @@
+---
+import { Constants } from "../helpers/Constants";
+import { CopyCode } from "./CopyCode.tsx";
+import Icon from "./Icon.astro";
+const currentYear = new Date().getFullYear();
+---
+
+<img
+  src="/images/horizontal-divider--2.png"
+  alt="horizontal divider"
+  class="w-full h-auto"
+/>
+
+<footer class="relative">
+  <img
+    src="/images/footer__seahorse.png"
+    alt="Seahorse"
+    class="absolute top-0 -right-0 z-0"
+  />
+  <div class="relative w-[702px] mx-auto pt-[200px] mb-20 z-10">
+    <img
+      src="/images/bubbles.png"
+      alt="Bubbles"
+      class="absolute top-[130px] -left-[90px]"
+    />
+    <h3 class="text-center text-4xl text-makara mb-3">
+      I’m all in, hook line and sinker
+    </h3>
+    <h2 class="text-center text-midnightExpress text-7xl mb-12">
+      Clone the Repo
+    </h2>
+    <CopyCode client:only="react" />
+  </div>
+
+  <ul
+    class="flex items-center gap-10 justify-center mb-20 text-white z-10 relative"
+  >
+    <li>
+      <a href={Constants.YOUTUBE} target="blank" rel="noreffer"
+        ><Icon size={42} id="youtube" /></a
+      >
+    </li>
+    <li>
+      <a href={Constants.TWITTER} target="blank" rel="noreffer"
+        ><Icon size={42} id="twitter" /></a
+      >
+    </li>
+    <li>
+      <a href={Constants.GITHUB} target="blank" rel="noreffer"
+        ><Icon size={42} id="github" /></a
+      >
+    </li>
+    <li>
+      <a href={Constants.MEDIUM} target="blank" rel="noreffer"
+        ><Icon size={42} id="medium" /></a
+      >
+    </li>
+  </ul>
+
+  <p class="text-center leading-loose z-10 relative">
+    Copyright {currentYear}. <a
+      href={Constants.AHHA}
+      class="underline hover:no-underline"
+      target="_blank"
+      rel="noreffer">Ah Ha Creative, LLC</a
+    >. All Rights Reserved.
+    <br />
+    <a href="/terms" class="underline hover:no-underline">Terms of Use</a
+    >&nbsp;&nbsp;.&nbsp;&nbsp;
+    <a href="/disclaimers" class="underline hover:no-underline">Disclaimers</a
+    >&nbsp;&nbsp;.&nbsp;&nbsp;
+    <a href="/privacy" class="underline hover:no-underline">Privacy Policy</a>
+  </p>
+
+  <img src="/images/bg__footer--btm.png" alt="" class="w-full h-auto" />
+</footer>
